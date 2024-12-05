@@ -25,6 +25,9 @@ A new Flutter project.
 
 ![Image](screenshots/diagram.png)
 
+## Download APK
+[APK](https://drive.google.com/file/d/1eqX9yF1H4zCkoFu0SLvqvzU-Ip3uXZLz/view?usp=sharing)
+
 ## How to use
 
 To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
