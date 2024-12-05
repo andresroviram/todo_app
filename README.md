@@ -2,15 +2,47 @@
 
 A new Flutter project.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+<br>
+<p align="center">
+<img src="screenshots/Screenshot_1733420306.png" width="30%">
+<img src="screenshots/Screenshot_1733420313.png" width="30%">
+<img src="screenshots/Screenshot_1733420321.png" width="30%">
+<img src="screenshots/Screenshot_1733420328.png" width="30%">
+<img src="screenshots/Screenshot_1733420332.png" width="30%">
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Using on this app
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Clean Architecture
+- Bloc
+- State Management
+- Value Equality
+- Freezed
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Clean Architecture Diagram
+
+![Image](screenshots/diagram.png)
+
+## How to use
+
+To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
+
+```
+# Clone this repository
+$ git clone https://github.com/andresroviram/todo_app
+
+# Go into the repository
+$ cd todo_app
+
+# Install dependencies
+$ flutter pub get
+
+# generate codes
+$ dart run build_runner build --delete-conflicting-outputs
+
+# Run the app
+$ flutter run
+```
+
