@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   uuid: ^4.5.1
   shared_preferences: ^2.3.3
+  injectable: ^2.5.0
 
   #state management
   bloc: ^8.1.4 #https://pub.dev/packages/bloc
@@ -59,6 +60,7 @@ dev_dependencies:
   build_runner: ^2.4.13
   json_serializable: ^6.9.0
   freezed: ^2.5.7
+  injectable_generator: ^2.6.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

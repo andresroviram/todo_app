@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/components/add_or_edit_task_modal.dart';
 import 'package:todo_app/components/circle_filter.dart';
-import 'package:todo_app/services/shared_preferences.dart';
+import 'package:todo_app/modules/home/domain/usecases/home.usecases.dart';
 
 import '../bloc/home_bloc.dart';
 import '../widgets/task_card.dart';
@@ -15,7 +15,7 @@ class HomeView extends StatelessWidget {
     return BlocProvider(
       lazy: false,
       create: (context) => HomeBloc(
-        prefsService: SharedPreferencesService.instance,
+        homeUseCases: HomeUseCases.instance,
       )..add(HomeEvent.getTask()),
       child: const _HomeContent(title: 'TODO APP'),
     );

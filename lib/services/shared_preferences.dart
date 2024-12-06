@@ -8,6 +8,7 @@ import '../modules/home/data/models/task.models.dart';
 class SharedPreferencesService {
   SharedPreferencesService._();
   static final SharedPreferencesService instance = SharedPreferencesService._();
+
   static const String _todosKey = 'todos';
 
   late final SharedPreferences _preferences;
@@ -33,7 +34,15 @@ class SharedPreferencesService {
   set remove(String? id) => removeToDisk(_todosKey, id);
   set update(TaskEntity todo) => updateToDisk(_todosKey, todo);
 
-  void updateToDisk(String key, TaskEntity task) {
+  Future<void> createTask(TaskEntity? todo) async =>
+      saveToDisk(_todosKey, todo);
+
+  Future<void> updateTask(TaskEntity todo) async =>
+      updateToDisk(_todosKey, todo);
+
+  Future<void> deleteTask(String id) async => removeToDisk(_todosKey, id);
+
+  Future<void> updateToDisk(String key, TaskEntity task) async {
     List<TaskEntity> todos = [];
     List<TaskEntity> update = currentTask.map((tasks) {
       if (tasks.id == task.id) {
