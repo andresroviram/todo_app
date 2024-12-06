@@ -7,23 +7,26 @@ class HomeRepository implements IHomeRepository {
   HomeRepository._();
   static final HomeRepository instance = HomeRepository._();
 
+  static IHomeLocalDatasource homeLocalDatasource =
+      HomeLocalDataSource.instance;
+
   @override
   Future<List<TaskEntity>> getCreateTask(TaskEntity task) {
-    return HomeLocalDataSource.instance.getCreateTask(task);
+    return homeLocalDatasource.getCreateTask(task);
   }
 
   @override
   Future<List<TaskEntity>> getCurrentTask() {
-    return HomeLocalDataSource.instance.getCurrentTask();
+    return homeLocalDatasource.getCurrentTask();
   }
 
   @override
   Future<List<TaskEntity>> updateTask(TaskEntity task) {
-    return HomeLocalDataSource.instance.updateTask(task);
+    return homeLocalDatasource.updateTask(task);
   }
 
   @override
   Future<List<TaskEntity>> deleteTask(String id) {
-    return HomeLocalDataSource.instance.deleteTask(id);
+    return homeLocalDatasource.deleteTask(id);
   }
 }
