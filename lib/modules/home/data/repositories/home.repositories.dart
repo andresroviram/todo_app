@@ -11,13 +11,13 @@ class HomeRepository implements IHomeRepository {
       HomeLocalDataSource.instance;
 
   @override
-  Future<List<TaskEntity>> getCreateTask(TaskEntity task) {
-    return homeLocalDatasource.getCreateTask(task);
+  Future<List<TaskEntity>> createTask(TaskEntity task) {
+    return homeLocalDatasource.createTask(task);
   }
 
   @override
-  Future<List<TaskEntity>> getCurrentTask() {
-    return homeLocalDatasource.getCurrentTask();
+  Future<List<TaskEntity>> currentTask() {
+    return homeLocalDatasource.currentTask();
   }
 
   @override

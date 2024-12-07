@@ -18,30 +18,27 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(TaskEntity task) createTask,
     required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
+    required TResult Function(TaskEntity task) updateTask,
     required TResult Function(String filter) filterTasks,
     required TResult Function() getTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(TaskEntity task)? createTask,
     TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
+    TResult? Function(TaskEntity task)? updateTask,
     TResult? Function(String filter)? filterTasks,
     TResult? Function()? getTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(TaskEntity task)? createTask,
     TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
+    TResult Function(TaskEntity task)? updateTask,
     TResult Function(String filter)? filterTasks,
     TResult Function()? getTask,
     required TResult orElse(),
@@ -49,30 +46,27 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_CreateTaskEvent value) createTask,
     required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
+    required TResult Function(_UpdateTaskEvent value) updateTask,
     required TResult Function(_FilterTasksEvent value) filterTasks,
     required TResult Function(_GetTaskEvent value) getTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_CreateTaskEvent value)? createTask,
     TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
+    TResult? Function(_UpdateTaskEvent value)? updateTask,
     TResult? Function(_FilterTasksEvent value)? filterTasks,
     TResult? Function(_GetTaskEvent value)? getTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_CreateTaskEvent value)? createTask,
     TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
+    TResult Function(_UpdateTaskEvent value)? updateTask,
     TResult Function(_FilterTasksEvent value)? filterTasks,
     TResult Function(_GetTaskEvent value)? getTask,
     required TResult orElse(),
@@ -98,135 +92,6 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
-
-  @override
-  String toString() {
-    return 'HomeEvent.started()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(TaskEntity task) createTask,
-    required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
-    required TResult Function(String filter) filterTasks,
-    required TResult Function() getTask,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(TaskEntity task)? createTask,
-    TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
-    TResult? Function(String filter)? filterTasks,
-    TResult? Function()? getTask,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(TaskEntity task)? createTask,
-    TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
-    TResult Function(String filter)? filterTasks,
-    TResult Function()? getTask,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_CreateTaskEvent value) createTask,
-    required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
-    required TResult Function(_FilterTasksEvent value) filterTasks,
-    required TResult Function(_GetTaskEvent value) getTask,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_CreateTaskEvent value)? createTask,
-    TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
-    TResult? Function(_FilterTasksEvent value)? filterTasks,
-    TResult? Function(_GetTaskEvent value)? getTask,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_CreateTaskEvent value)? createTask,
-    TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
-    TResult Function(_FilterTasksEvent value)? filterTasks,
-    TResult Function(_GetTaskEvent value)? getTask,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements HomeEvent {
-  const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
@@ -298,10 +163,9 @@ class _$CreateTaskEventImpl implements _CreateTaskEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(TaskEntity task) createTask,
     required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
+    required TResult Function(TaskEntity task) updateTask,
     required TResult Function(String filter) filterTasks,
     required TResult Function() getTask,
   }) {
@@ -311,10 +175,9 @@ class _$CreateTaskEventImpl implements _CreateTaskEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(TaskEntity task)? createTask,
     TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
+    TResult? Function(TaskEntity task)? updateTask,
     TResult? Function(String filter)? filterTasks,
     TResult? Function()? getTask,
   }) {
@@ -324,10 +187,9 @@ class _$CreateTaskEventImpl implements _CreateTaskEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(TaskEntity task)? createTask,
     TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
+    TResult Function(TaskEntity task)? updateTask,
     TResult Function(String filter)? filterTasks,
     TResult Function()? getTask,
     required TResult orElse(),
@@ -341,10 +203,9 @@ class _$CreateTaskEventImpl implements _CreateTaskEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_CreateTaskEvent value) createTask,
     required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
+    required TResult Function(_UpdateTaskEvent value) updateTask,
     required TResult Function(_FilterTasksEvent value) filterTasks,
     required TResult Function(_GetTaskEvent value) getTask,
   }) {
@@ -354,10 +215,9 @@ class _$CreateTaskEventImpl implements _CreateTaskEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_CreateTaskEvent value)? createTask,
     TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
+    TResult? Function(_UpdateTaskEvent value)? updateTask,
     TResult? Function(_FilterTasksEvent value)? filterTasks,
     TResult? Function(_GetTaskEvent value)? getTask,
   }) {
@@ -367,10 +227,9 @@ class _$CreateTaskEventImpl implements _CreateTaskEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_CreateTaskEvent value)? createTask,
     TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
+    TResult Function(_UpdateTaskEvent value)? updateTask,
     TResult Function(_FilterTasksEvent value)? filterTasks,
     TResult Function(_GetTaskEvent value)? getTask,
     required TResult orElse(),
@@ -463,10 +322,9 @@ class _$DeleteTaskEventImpl implements _DeleteTaskEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(TaskEntity task) createTask,
     required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
+    required TResult Function(TaskEntity task) updateTask,
     required TResult Function(String filter) filterTasks,
     required TResult Function() getTask,
   }) {
@@ -476,10 +334,9 @@ class _$DeleteTaskEventImpl implements _DeleteTaskEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(TaskEntity task)? createTask,
     TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
+    TResult? Function(TaskEntity task)? updateTask,
     TResult? Function(String filter)? filterTasks,
     TResult? Function()? getTask,
   }) {
@@ -489,10 +346,9 @@ class _$DeleteTaskEventImpl implements _DeleteTaskEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(TaskEntity task)? createTask,
     TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
+    TResult Function(TaskEntity task)? updateTask,
     TResult Function(String filter)? filterTasks,
     TResult Function()? getTask,
     required TResult orElse(),
@@ -506,10 +362,9 @@ class _$DeleteTaskEventImpl implements _DeleteTaskEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_CreateTaskEvent value) createTask,
     required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
+    required TResult Function(_UpdateTaskEvent value) updateTask,
     required TResult Function(_FilterTasksEvent value) filterTasks,
     required TResult Function(_GetTaskEvent value) getTask,
   }) {
@@ -519,10 +374,9 @@ class _$DeleteTaskEventImpl implements _DeleteTaskEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_CreateTaskEvent value)? createTask,
     TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
+    TResult? Function(_UpdateTaskEvent value)? updateTask,
     TResult? Function(_FilterTasksEvent value)? filterTasks,
     TResult? Function(_GetTaskEvent value)? getTask,
   }) {
@@ -532,10 +386,9 @@ class _$DeleteTaskEventImpl implements _DeleteTaskEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_CreateTaskEvent value)? createTask,
     TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
+    TResult Function(_UpdateTaskEvent value)? updateTask,
     TResult Function(_FilterTasksEvent value)? filterTasks,
     TResult Function(_GetTaskEvent value)? getTask,
     required TResult orElse(),
@@ -560,20 +413,20 @@ abstract class _DeleteTaskEvent implements HomeEvent {
 }
 
 /// @nodoc
-abstract class _$$EditTaskEventImplCopyWith<$Res> {
-  factory _$$EditTaskEventImplCopyWith(
-          _$EditTaskEventImpl value, $Res Function(_$EditTaskEventImpl) then) =
-      __$$EditTaskEventImplCopyWithImpl<$Res>;
+abstract class _$$UpdateTaskEventImplCopyWith<$Res> {
+  factory _$$UpdateTaskEventImplCopyWith(_$UpdateTaskEventImpl value,
+          $Res Function(_$UpdateTaskEventImpl) then) =
+      __$$UpdateTaskEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TaskEntity task});
 }
 
 /// @nodoc
-class __$$EditTaskEventImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$EditTaskEventImpl>
-    implements _$$EditTaskEventImplCopyWith<$Res> {
-  __$$EditTaskEventImplCopyWithImpl(
-      _$EditTaskEventImpl _value, $Res Function(_$EditTaskEventImpl) _then)
+class __$$UpdateTaskEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$UpdateTaskEventImpl>
+    implements _$$UpdateTaskEventImplCopyWith<$Res> {
+  __$$UpdateTaskEventImplCopyWithImpl(
+      _$UpdateTaskEventImpl _value, $Res Function(_$UpdateTaskEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeEvent
@@ -583,7 +436,7 @@ class __$$EditTaskEventImplCopyWithImpl<$Res>
   $Res call({
     Object? task = null,
   }) {
-    return _then(_$EditTaskEventImpl(
+    return _then(_$UpdateTaskEventImpl(
       null == task
           ? _value.task
           : task // ignore: cast_nullable_to_non_nullable
@@ -594,22 +447,22 @@ class __$$EditTaskEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EditTaskEventImpl implements _EditTaskEvent {
-  const _$EditTaskEventImpl(this.task);
+class _$UpdateTaskEventImpl implements _UpdateTaskEvent {
+  const _$UpdateTaskEventImpl(this.task);
 
   @override
   final TaskEntity task;
 
   @override
   String toString() {
-    return 'HomeEvent.editTask(task: $task)';
+    return 'HomeEvent.updateTask(task: $task)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EditTaskEventImpl &&
+            other is _$UpdateTaskEventImpl &&
             (identical(other.task, task) || other.task == task));
   }
 
@@ -621,48 +474,46 @@ class _$EditTaskEventImpl implements _EditTaskEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$EditTaskEventImplCopyWith<_$EditTaskEventImpl> get copyWith =>
-      __$$EditTaskEventImplCopyWithImpl<_$EditTaskEventImpl>(this, _$identity);
+  _$$UpdateTaskEventImplCopyWith<_$UpdateTaskEventImpl> get copyWith =>
+      __$$UpdateTaskEventImplCopyWithImpl<_$UpdateTaskEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(TaskEntity task) createTask,
     required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
+    required TResult Function(TaskEntity task) updateTask,
     required TResult Function(String filter) filterTasks,
     required TResult Function() getTask,
   }) {
-    return editTask(task);
+    return updateTask(task);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(TaskEntity task)? createTask,
     TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
+    TResult? Function(TaskEntity task)? updateTask,
     TResult? Function(String filter)? filterTasks,
     TResult? Function()? getTask,
   }) {
-    return editTask?.call(task);
+    return updateTask?.call(task);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(TaskEntity task)? createTask,
     TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
+    TResult Function(TaskEntity task)? updateTask,
     TResult Function(String filter)? filterTasks,
     TResult Function()? getTask,
     required TResult orElse(),
   }) {
-    if (editTask != null) {
-      return editTask(task);
+    if (updateTask != null) {
+      return updateTask(task);
     }
     return orElse();
   }
@@ -670,56 +521,53 @@ class _$EditTaskEventImpl implements _EditTaskEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_CreateTaskEvent value) createTask,
     required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
+    required TResult Function(_UpdateTaskEvent value) updateTask,
     required TResult Function(_FilterTasksEvent value) filterTasks,
     required TResult Function(_GetTaskEvent value) getTask,
   }) {
-    return editTask(this);
+    return updateTask(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_CreateTaskEvent value)? createTask,
     TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
+    TResult? Function(_UpdateTaskEvent value)? updateTask,
     TResult? Function(_FilterTasksEvent value)? filterTasks,
     TResult? Function(_GetTaskEvent value)? getTask,
   }) {
-    return editTask?.call(this);
+    return updateTask?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_CreateTaskEvent value)? createTask,
     TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
+    TResult Function(_UpdateTaskEvent value)? updateTask,
     TResult Function(_FilterTasksEvent value)? filterTasks,
     TResult Function(_GetTaskEvent value)? getTask,
     required TResult orElse(),
   }) {
-    if (editTask != null) {
-      return editTask(this);
+    if (updateTask != null) {
+      return updateTask(this);
     }
     return orElse();
   }
 }
 
-abstract class _EditTaskEvent implements HomeEvent {
-  const factory _EditTaskEvent(final TaskEntity task) = _$EditTaskEventImpl;
+abstract class _UpdateTaskEvent implements HomeEvent {
+  const factory _UpdateTaskEvent(final TaskEntity task) = _$UpdateTaskEventImpl;
 
   TaskEntity get task;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EditTaskEventImplCopyWith<_$EditTaskEventImpl> get copyWith =>
+  _$$UpdateTaskEventImplCopyWith<_$UpdateTaskEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -792,10 +640,9 @@ class _$FilterTasksEventImpl implements _FilterTasksEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(TaskEntity task) createTask,
     required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
+    required TResult Function(TaskEntity task) updateTask,
     required TResult Function(String filter) filterTasks,
     required TResult Function() getTask,
   }) {
@@ -805,10 +652,9 @@ class _$FilterTasksEventImpl implements _FilterTasksEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(TaskEntity task)? createTask,
     TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
+    TResult? Function(TaskEntity task)? updateTask,
     TResult? Function(String filter)? filterTasks,
     TResult? Function()? getTask,
   }) {
@@ -818,10 +664,9 @@ class _$FilterTasksEventImpl implements _FilterTasksEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(TaskEntity task)? createTask,
     TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
+    TResult Function(TaskEntity task)? updateTask,
     TResult Function(String filter)? filterTasks,
     TResult Function()? getTask,
     required TResult orElse(),
@@ -835,10 +680,9 @@ class _$FilterTasksEventImpl implements _FilterTasksEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_CreateTaskEvent value) createTask,
     required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
+    required TResult Function(_UpdateTaskEvent value) updateTask,
     required TResult Function(_FilterTasksEvent value) filterTasks,
     required TResult Function(_GetTaskEvent value) getTask,
   }) {
@@ -848,10 +692,9 @@ class _$FilterTasksEventImpl implements _FilterTasksEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_CreateTaskEvent value)? createTask,
     TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
+    TResult? Function(_UpdateTaskEvent value)? updateTask,
     TResult? Function(_FilterTasksEvent value)? filterTasks,
     TResult? Function(_GetTaskEvent value)? getTask,
   }) {
@@ -861,10 +704,9 @@ class _$FilterTasksEventImpl implements _FilterTasksEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_CreateTaskEvent value)? createTask,
     TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
+    TResult Function(_UpdateTaskEvent value)? updateTask,
     TResult Function(_FilterTasksEvent value)? filterTasks,
     TResult Function(_GetTaskEvent value)? getTask,
     required TResult orElse(),
@@ -929,10 +771,9 @@ class _$GetTaskEventImpl implements _GetTaskEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(TaskEntity task) createTask,
     required TResult Function(String id) deleteTask,
-    required TResult Function(TaskEntity task) editTask,
+    required TResult Function(TaskEntity task) updateTask,
     required TResult Function(String filter) filterTasks,
     required TResult Function() getTask,
   }) {
@@ -942,10 +783,9 @@ class _$GetTaskEventImpl implements _GetTaskEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(TaskEntity task)? createTask,
     TResult? Function(String id)? deleteTask,
-    TResult? Function(TaskEntity task)? editTask,
+    TResult? Function(TaskEntity task)? updateTask,
     TResult? Function(String filter)? filterTasks,
     TResult? Function()? getTask,
   }) {
@@ -955,10 +795,9 @@ class _$GetTaskEventImpl implements _GetTaskEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(TaskEntity task)? createTask,
     TResult Function(String id)? deleteTask,
-    TResult Function(TaskEntity task)? editTask,
+    TResult Function(TaskEntity task)? updateTask,
     TResult Function(String filter)? filterTasks,
     TResult Function()? getTask,
     required TResult orElse(),
@@ -972,10 +811,9 @@ class _$GetTaskEventImpl implements _GetTaskEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_CreateTaskEvent value) createTask,
     required TResult Function(_DeleteTaskEvent value) deleteTask,
-    required TResult Function(_EditTaskEvent value) editTask,
+    required TResult Function(_UpdateTaskEvent value) updateTask,
     required TResult Function(_FilterTasksEvent value) filterTasks,
     required TResult Function(_GetTaskEvent value) getTask,
   }) {
@@ -985,10 +823,9 @@ class _$GetTaskEventImpl implements _GetTaskEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_CreateTaskEvent value)? createTask,
     TResult? Function(_DeleteTaskEvent value)? deleteTask,
-    TResult? Function(_EditTaskEvent value)? editTask,
+    TResult? Function(_UpdateTaskEvent value)? updateTask,
     TResult? Function(_FilterTasksEvent value)? filterTasks,
     TResult? Function(_GetTaskEvent value)? getTask,
   }) {
@@ -998,10 +835,9 @@ class _$GetTaskEventImpl implements _GetTaskEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_CreateTaskEvent value)? createTask,
     TResult Function(_DeleteTaskEvent value)? deleteTask,
-    TResult Function(_EditTaskEvent value)? editTask,
+    TResult Function(_UpdateTaskEvent value)? updateTask,
     TResult Function(_FilterTasksEvent value)? filterTasks,
     TResult Function(_GetTaskEvent value)? getTask,
     required TResult orElse(),
