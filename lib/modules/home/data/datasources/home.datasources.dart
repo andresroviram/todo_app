@@ -9,10 +9,8 @@ import '../models/task.models.dart';
 abstract interface class IHomeLocalDatasource {
   IHomeLocalDatasource._();
 
-  Future<List<TaskEntity>> createTask(TaskEntity task);
+  Future<void> saveTask(List<TaskEntity> tasks);
   Future<List<TaskEntity>> currentTask();
-  Future<List<TaskEntity>> updateTask(TaskEntity task);
-  Future<List<TaskEntity>> deleteTask(String id);
 }
 
 class HomeLocalDataSource implements IHomeLocalDatasource {
@@ -25,16 +23,11 @@ class HomeLocalDataSource implements IHomeLocalDatasource {
       SharedPreferencesService.instance;
 
   @override
-  Future<List<TaskEntity>> createTask(TaskEntity task) async {
-    final currentTask = (sharedPreferences
-        .getFromDisk(_todosKey)!
-        .withListConverter<TaskEntity>(callback: TaskModel.fromJson));
-    List<TaskEntity> todos = [...currentTask, task];
+  Future<void> saveTask(List<TaskEntity> tasks) async {
     final content = json.encode(
-      todos.map((todo) => TaskModel.fromEntity(todo).toJson()).toList(),
+      tasks.map((task) => TaskModel.fromEntity(task).toJson()).toList(),
     );
-    await sharedPreferences.saveToDisk(_todosKey, content);
-    return todos;
+    return await sharedPreferences.saveToDisk(_todosKey, content);
   }
 
   @override
@@ -42,38 +35,5 @@ class HomeLocalDataSource implements IHomeLocalDatasource {
     return (sharedPreferences
         .getFromDisk(_todosKey)!
         .withListConverter<TaskEntity>(callback: TaskModel.fromJson));
-  }
-
-  @override
-  Future<List<TaskEntity>> updateTask(TaskEntity task) async {
-    final currentTask = (sharedPreferences
-        .getFromDisk(_todosKey)!
-        .withListConverter<TaskEntity>(callback: TaskModel.fromJson));
-    List<TaskEntity> update = currentTask.map((tasks) {
-      if (tasks.id == task.id) {
-        return task;
-      }
-      return tasks;
-    }).toList();
-    List<TaskEntity> todos = [...update];
-    final content = json.encode(
-      todos.map((todo) => TaskModel.fromEntity(todo).toJson()).toList(),
-    );
-    await SharedPreferencesService.instance.saveToDisk(_todosKey, content);
-    return todos;
-  }
-
-  @override
-  Future<List<TaskEntity>> deleteTask(String id) async {
-    final currentTask = (sharedPreferences
-        .getFromDisk(_todosKey)!
-        .withListConverter<TaskEntity>(callback: TaskModel.fromJson));
-    List<TaskEntity> todos = [...currentTask];
-    todos.removeWhere((task) => task.id == id);
-    final content = json.encode(
-      todos.map((todo) => TaskModel.fromEntity(todo).toJson()).toList(),
-    );
-    await SharedPreferencesService.instance.saveToDisk(_todosKey, content);
-    return todos;
   }
 }

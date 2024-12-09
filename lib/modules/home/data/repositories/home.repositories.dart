@@ -11,22 +11,12 @@ class HomeRepository implements IHomeRepository {
       HomeLocalDataSource.instance;
 
   @override
-  Future<List<TaskEntity>> createTask(TaskEntity task) {
-    return homeLocalDatasource.createTask(task);
+  Future<void> saveTask(List<TaskEntity> tasks) {
+    return homeLocalDatasource.saveTask(tasks);
   }
 
   @override
   Future<List<TaskEntity>> currentTask() {
     return homeLocalDatasource.currentTask();
-  }
-
-  @override
-  Future<List<TaskEntity>> updateTask(TaskEntity task) {
-    return homeLocalDatasource.updateTask(task);
-  }
-
-  @override
-  Future<List<TaskEntity>> deleteTask(String id) {
-    return homeLocalDatasource.deleteTask(id);
   }
 }

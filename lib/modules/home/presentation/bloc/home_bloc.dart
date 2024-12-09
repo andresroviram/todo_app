@@ -22,38 +22,52 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   Future<void> _getTask(_GetTaskEvent event, Emitter<HomeState> emit) async {
     List<TaskEntity> tasks = await _homeUseCases.currentTask();
-    emit(state.copyWith(tasks: tasks));
+    emit(state.copyWith(tasks: tasks, tasksFiltered: tasks));
   }
 
   Future<void> _createTask(
       _CreateTaskEvent event, Emitter<HomeState> emit) async {
-    List<TaskEntity> tasks = await _homeUseCases.createTask(event.task);
+    List<TaskEntity> tasks = [...state.tasks, event.task];
+    await _homeUseCases.saveTask(tasks);
 
     emit(
       state.copyWith(
         filter: 'all',
         tasks: tasks,
+        tasksFiltered: tasks,
       ),
     );
   }
 
   Future<void> _deleteTask(
       _DeleteTaskEvent event, Emitter<HomeState> emit) async {
-    List<TaskEntity> tasks = await _homeUseCases.deleteTask(event.id);
+    List<TaskEntity> tasks = [...state.tasks];
+    tasks.removeWhere((task) => task.id == event.id);
+    await _homeUseCases.saveTask(tasks);
 
     emit(
       state.copyWith(
         filter: 'all',
         tasks: tasks,
+        tasksFiltered: tasks,
       ),
     );
   }
 
   Future<void> _updateTask(
       _UpdateTaskEvent event, Emitter<HomeState> emit) async {
-    List<TaskEntity> tasks = await _homeUseCases.updateTask(event.task);
+    List<TaskEntity> update = state.tasks.map((tasks) {
+      if (tasks.id == event.task.id) {
+        return event.task;
+      }
+      return tasks;
+    }).toList();
+    List<TaskEntity> tasks = [...update];
+
+    await _homeUseCases.saveTask(tasks);
     emit(state.copyWith(
       tasks: tasks,
+      tasksFiltered: tasks,
     ));
   }
 
@@ -63,7 +77,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(
       state.copyWith(
         filter: event.filter,
-        tasks: tasks.where((task) {
+        tasksFiltered: tasks.where((task) {
           if (event.filter == 'completed') {
             return task.isCompleted;
           }

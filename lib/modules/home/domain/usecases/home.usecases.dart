@@ -9,19 +9,11 @@ class HomeUseCases {
 
   static IHomeRepository homeRepository = HomeRepository.instance;
 
-  Future<List<TaskEntity>> createTask(TaskEntity task) async {
-    return await homeRepository.createTask(task);
+  Future<void> saveTask(List<TaskEntity> tasks) async {
+    return await homeRepository.saveTask(tasks);
   }
 
   Future<List<TaskEntity>> currentTask() async {
     return homeRepository.currentTask();
-  }
-
-  Future<List<TaskEntity>> updateTask(TaskEntity task) async {
-    return homeRepository.updateTask(task);
-  }
-
-  Future<List<TaskEntity>> deleteTask(String id) async {
-    return homeRepository.deleteTask(id);
   }
 }

@@ -171,13 +171,14 @@ class _HomeContent extends StatelessWidget {
                   Expanded(
                     child: ListView.builder(
                       padding: EdgeInsets.zero,
-                      itemCount: state.tasks.length,
+                      itemCount: state.tasksFiltered.length,
                       itemBuilder: (context, index) {
-                        final task = state.tasks[index];
+                        final task = state.tasksFiltered[index];
                         return TaskCard(
                           task: task,
                           onEdit: (editTask) {
                             homeBloc.add(HomeEvent.updateTask(editTask));
+                            homeBloc.add(HomeEvent.filterTasks(state.filter));
                           },
                           onDelete: (id) {
                             homeBloc.add(HomeEvent.deleteTask(id));
